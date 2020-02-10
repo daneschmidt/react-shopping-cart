@@ -35,18 +35,18 @@ class App extends Component {
 
   handleDelete = counterId => {
     //filter method to sort out the given id passed//
-    const counters = this.state.counters.filter(c => c.id != counterId);
+    const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
   render() {
     return (
-      < React.Fragment >
+      < React.Fragment className="greybg" >
         < NavBar
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
         // totalProducts={this.state.counters.length}
         />
-        <main className="container">
+        <main className="container, greybg">
           <Counters
             counters={this.state.counters}
             onReset={this.handleReset}
